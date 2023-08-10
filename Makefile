@@ -5,7 +5,7 @@ SFML_LIBS = -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreet
 
 SOURCES = $(wildcard src/*.cpp)
 
-OBJECTS = $(patsubst src/%.cpp,%.o,$(SOURCES))
+OBJECTS = $(patsubst src/%.cpp, build/%.o, $(SOURCES))
 
 EXECUTABLE = bin/TowerRPG
 
@@ -21,7 +21,7 @@ build/stdafx.pch: include/stdafx.hpp
 $(EXECUTABLE): $(OBJECTS)
 	g++ -o $(EXECUTABLE) $(OBJECTS) -Llib $(SFML_LIBS)
 
-%.o: src/%.cpp build/stdafx.pch
+build/%.o: src/%.cpp build/stdafx.pch
 	g++ $(CXXFLAGS) -c -o $@ $< -include include/stdafx.hpp
 
 run: $(EXECUTABLE)
