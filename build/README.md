@@ -40,3 +40,4 @@ Setup:  -In VS Code go to Shortcuts with ctrl + k, ctrl + s.
 }
 
         -now you can go to .cpp files and press the Keybind (PauseBreak)
+        -all .o files will be placed here
