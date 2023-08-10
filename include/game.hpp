@@ -4,6 +4,8 @@
 #include "../include/stdafx.hpp"
 // Own Headers
 
+//* Main Loop, Game Logic, Input Handling, Update Stats, Render Graphics
+
 class Game {
  public:
   Game();

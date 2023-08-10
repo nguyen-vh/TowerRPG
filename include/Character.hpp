@@ -4,6 +4,8 @@
 #include "../include/stdafx.hpp"
 // Own Headers
 
+//* Character
+
 class Character {
  public:
   Character();
