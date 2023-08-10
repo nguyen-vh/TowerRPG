@@ -25,6 +25,7 @@ void Game::RenderGraphics(sf::RenderWindow& window) {
 
   // + Draw game elements (background, characters, objects, UI)
 
+  // example
   sf::CircleShape shape(100.f);
   shape.setFillColor(sf::Color::Red);
   window.draw(shape);
