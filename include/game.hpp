@@ -4,6 +4,7 @@
 #define GAME_HPP
 
 #include "../include/stdafx.hpp"
+// Own Headers
 
 class Game {
  public:
