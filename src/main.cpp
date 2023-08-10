@@ -1,13 +1,10 @@
-#include "../include/stdafx.hpp"
-
-// Own Headers
-#include "../include/game.hpp"
+//  Own Headers
+#include "../include/Character.hpp"
+#include "../include/Game.hpp"
 
 int main() {
-  sf::RenderWindow window(sf::VideoMode(1920, 1080), "TowerRPG");
-  // 1280x720(720p) 1920x1080(1080p) 2560x1440(1440p)
-
-  Game game;
+  sf::RenderWindow window(sf::VideoMode(1920, 1080), "TowerRPG",
+                          sf::Style::Close | sf::Style::Titlebar);
 
   while (window.isOpen()) {
     sf::Event event;
@@ -15,15 +12,7 @@ int main() {
       if (event.type == sf::Event::Closed) window.close();
     }
 
-    // Update game logic
-    game.update();
-
-    window.clear();
-
-    // Draw game content
-    game.draw(window);
-
-    window.display();
+    Game::GameLoop(window);
   }
 
   return 0;

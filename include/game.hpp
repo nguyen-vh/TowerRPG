@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef GAME_HPP
 #define GAME_HPP
 
@@ -8,13 +6,23 @@
 
 class Game {
  public:
-  Game();  // Constructor
+  Game();
 
-  void update();                        // Update game logic
-  void draw(sf::RenderWindow& window);  // Draw game content
+  virtual ~Game();
+
+  //* Heart of the program
+  static void GameLoop(sf::RenderWindow& window);
+
+  //* Register Input
+  static void InputHandling();
+
+  //* Update all positions, stats, collisions, etc.
+  static void UpdateGameState();
+
+  //* Clear old Frame, Draw new State, Display
+  static void RenderGraphics(sf::RenderWindow& window);
 
  private:
-  // Define your game objects, variables, and functions here
 };
 
 #endif
