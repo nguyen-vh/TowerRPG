@@ -1,17 +1,13 @@
-CXX = g++
-CXXFLAGS = -std=c++23 -Iinclude
-
-SRC_DIR = src
-BIN_DIR = bin
-LIB_DIR = lib
+CXXFLAGS = -std=c++23 -Iinclude -DSFML_STATIC
 
 SFML_LIBS = -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lgdi32 -lsfml-main
+# sfml-main.lib = hide Terminal Window (Windows)
 
-SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+SOURCES = $(wildcard src/*.cpp)
 
-OBJECTS = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(SOURCES))
+OBJECTS = $(patsubst src/%.cpp,%.o,$(SOURCES))
 
-EXECUTABLE = $(BIN_DIR)/TowerRPG
+EXECUTABLE = bin/TowerRPG
 
 debug: CXXFLAGS += -g
 debug: $(EXECUTABLE) run clean-all
@@ -19,11 +15,14 @@ debug: $(EXECUTABLE) run clean-all
 release: CXXFLAGS += -O3
 release: $(EXECUTABLE) run clean
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CXX) -o $(EXECUTABLE) $(OBJECTS) -L$(LIB_DIR) $(SFML_LIBS)
+build/stdafx.pch: include/stdafx.hpp
+	g++ $(CXXFLAGS) -c $< -o $@
 
-%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $< -DSFML_STATIC
+$(EXECUTABLE): $(OBJECTS)
+	g++ -o $(EXECUTABLE) $(OBJECTS) -Llib $(SFML_LIBS)
+
+%.o: src/%.cpp build/stdafx.pch
+	g++ $(CXXFLAGS) -c -o $@ $< -include include/stdafx.hpp
 
 run: $(EXECUTABLE)
 	$(EXECUTABLE)
@@ -33,6 +32,3 @@ clean:
 
 clean-all:
 	rm -f $(OBJECTS) $(EXECUTABLE)
-	
-
-	
