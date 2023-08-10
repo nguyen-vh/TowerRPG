@@ -1,13 +1,14 @@
+NAME = TowerRPG
+
 CXXFLAGS = -std=c++23 -Iinclude -DSFML_STATIC
 
 SFML_LIBS = -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lgdi32 -lsfml-main
-# sfml-main.lib = hide Terminal Window (Windows)
 
 SOURCES = $(wildcard src/*.cpp)
 
 OBJECTS = $(patsubst src/%.cpp, build/%.o, $(SOURCES))
 
-EXECUTABLE = bin/TowerRPG
+EXECUTABLE = bin/$(NAME)
 
 debug: CXXFLAGS += -g
 debug: $(EXECUTABLE) run clean-all
