@@ -12,7 +12,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/System.hpp>
 
-//  Common first-party headers
+//  Common standard headers
 
 //* For Pre-compiled Header
 
