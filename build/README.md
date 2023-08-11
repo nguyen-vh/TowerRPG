@@ -8,7 +8,7 @@ Setup:  -In VS Code go to Shortcuts with ctrl + k, ctrl + s.
         -set prefered Keybind (mine is PauseBreak button)
         -in Rootdirectory create tasks.json file
         -paste this in there
-'''
+
         {
     "tasks": [
         {
@@ -36,8 +36,8 @@ Setup:  -In VS Code go to Shortcuts with ctrl + k, ctrl + s.
             "group": "build"
         }
     ],
-    "version": "2.0.0"
-}
-'''
+    "version": "2.0.0" }
+
+
         -now you can go to .cpp files and press the Keybind (PauseBreak)
         -all .o files will be placed here
