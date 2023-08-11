@@ -1,8 +1,9 @@
+#pragma once
+
 #ifndef UI_HPP
 #define UI_HPP
 
 #include "../include/stdafx.hpp"
-// Own Headers
 
 //* UI-related stuff
 

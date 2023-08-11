@@ -1,8 +1,9 @@
+#pragma once
+
 #ifndef GAME_HPP
 #define GAME_HPP
 
 #include "../include/stdafx.hpp"
-// Own Headers
 
 //* Main Loop, Game Logic, Input Handling, Update Stats, Render Graphics
 
