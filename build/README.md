@@ -1,6 +1,13 @@
 Place for Obj and PCH files. 
 
-VS Code Run Task.
+
+
+One Way is to use Makefile.
+In the src/ Directory is a makefile which does the same.
+To run it go to the Directory and type "make 0=" and then the cpp file without the ".cpp"
+example: "make 0=Game"
+
+Another Way is VS Code Run Task. (more convenient way)
 -> Test compile one file
 
 Setup:  -In VS Code go to Shortcuts with ctrl + k, ctrl + s
@@ -40,6 +47,8 @@ Setup:  -In VS Code go to Shortcuts with ctrl + k, ctrl + s
         }
     ],
     "version": "2.0.0" }
+
+
 
 
         
